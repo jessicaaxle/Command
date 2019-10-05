@@ -35,12 +35,14 @@ public class CommandInvoker : MonoBehaviour
             counter++;
         }
         else
-            if (Input.GetKeyDown(KeyCode.Z))
         {
-            if (counter > 0)
+            if (Input.GetKeyDown(KeyCode.Z))
             {
-                counter--;
-                commandHistory[counter].Undo();
+                if (counter > 0)
+                {
+                    counter--;
+                    commandHistory[counter].Undo();
+                }
             }
         }
         else if (Input.GetKeyDown(KeyCode.R))
